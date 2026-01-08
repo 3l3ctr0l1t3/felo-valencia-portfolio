@@ -305,7 +305,7 @@
     {
       "title": "Pablo",
       "year": 2023,
-      "category": "short",
+      "category": "film",
       "image": "/images/projects/placeholder.jpg",
       "imdb": "https://www.imdb.com/title/tt33203877/",
       "role": {
@@ -444,7 +444,7 @@
     {
       "title": "Nocaut",
       "year": 2022,
-      "category": "short",
+      "category": "film",
       "image": "/images/projects/nocaut.jpg",
       "imdb": "https://www.imdb.com/title/tt20951900/",
       "role": {
@@ -534,7 +534,7 @@
     {
       "title": "Esperanza",
       "year": 2021,
-      "category": "short",
+      "category": "film",
       "image": "/images/projects/esperanza.jpg",
       "imdb": "https://www.imdb.com/title/tt9694948/",
       "role": {
@@ -748,7 +748,7 @@
     {
       "title": "Veintiocho de Mayo",
       "year": 2019,
-      "category": "short",
+      "category": "film",
       "image": "/images/projects/veintiocho-de-mayo.jpg",
       "imdb": "https://www.imdb.com/title/tt14829572/",
       "role": {
@@ -1154,7 +1154,7 @@
     {
       "title": "Bebé",
       "year": 2014,
-      "category": "short",
+      "category": "film",
       "image": "/images/projects/bebé.jpg",
       "imdb": "https://www.imdb.com/title/tt21027836/",
       "role": {
@@ -1222,7 +1222,7 @@
     {
       "title": "Heridas de guerra",
       "year": 2014,
-      "category": "short",
+      "category": "film",
       "image": "/images/projects/heridas-de-guerra.jpg",
       "imdb": "https://www.imdb.com/title/tt10866886/",
       "role": {
@@ -1341,7 +1341,7 @@
     {
       "title": "La boda del acordeonista",
       "year": 1986,
-      "category": "short",
+      "category": "film",
       "image": "/images/projects/la-boda-del-acordeonista.jpg",
       "imdb": "https://www.imdb.com/title/tt0226721/",
       "role": {
@@ -1375,7 +1375,7 @@
     {
       "title": "Aquel 19",
       "year": 1985,
-      "category": "short",
+      "category": "film",
       "image": "/images/projects/placeholder.jpg",
       "imdb": "https://www.imdb.com/title/tt0272451/",
       "role": {

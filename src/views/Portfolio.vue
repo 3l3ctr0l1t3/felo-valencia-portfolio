@@ -15,16 +15,14 @@ const categories = [
   { value: 'all', label: 'portfolio.allProjects' },
   { value: 'film', label: 'portfolio.films' },
   { value: 'series', label: 'portfolio.series' },
-  { value: 'documentary', label: 'portfolio.documentaries' },
-  { value: 'short', label: 'portfolio.shorts' }
+  { value: 'documentary', label: 'portfolio.documentaries' }
 ]
 
 // Category priority for sorting (lower = higher priority)
 const categoryPriority = {
   'film': 1,
   'series': 2,
-  'documentary': 3,
-  'short': 4
+  'documentary': 3
 }
 
 const sortedProjects = computed(() => {
@@ -148,7 +146,7 @@ const openProject = (project) => {
             </div>
             <v-card-text class="pa-4">
               <div class="d-flex justify-space-between align-center mb-2">
-                <h3 class="text-subtitle-1 font-weight-bold">{{ project.title }}</h3>
+                <h3 class="text-subtitle-1 font-weight-bold text-white">{{ project.title }}</h3>
                 <span class="text-body-2 text-grey">{{ project.year }}</span>
               </div>
               <p class="text-body-2 text-grey-lighten-1 mb-2">
