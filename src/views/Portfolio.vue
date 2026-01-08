@@ -150,7 +150,7 @@ const openProject = (project) => {
             </div>
             <v-card-text class="pa-4">
               <div class="d-flex justify-space-between align-center mb-2">
-                <h3 class="text-subtitle-1 font-weight-bold">{{ project.title }}</h3>
+                <h3 class="text-subtitle-1 font-weight-bold text-high-emphasis">{{ project.title }}</h3>
                 <span class="text-body-2 text-medium-emphasis">{{ project.year }}</span>
               </div>
               <p class="text-body-2 text-medium-emphasis mb-2">

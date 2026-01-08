@@ -102,7 +102,7 @@ const getImageUrl = (path) => {
               </template>
             </v-img>
             <v-card-text class="pa-4">
-              <h3 class="text-h6 mb-2">{{ project.title }}</h3>
+              <h3 class="text-h6 mb-2 text-high-emphasis">{{ project.title }}</h3>
               <p class="text-body-2 text-medium-emphasis mb-2">{{ project.year }}</p>
               <v-chip
                 v-for="(award, index) in project.awards.slice(0, 1)"
