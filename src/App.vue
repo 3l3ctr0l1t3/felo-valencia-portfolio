@@ -1,0 +1,93 @@
+<script setup>
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale, t } = useI18n()
+const drawer = ref(false)
+
+const changeLanguage = (lang) => {
+  locale.value = lang
+  localStorage.setItem('locale', lang)
+}
+
+const navItems = [
+  { title: 'nav.home', to: '/' },
+  { title: 'nav.portfolio', to: '/portfolio' }
+]
+</script>
+
+<template>
+  <v-app>
+    <v-app-bar flat color="transparent" class="px-4">
+      <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" />
+      <v-toolbar-title class="text-h5 font-weight-bold">
+        <router-link to="/" class="text-decoration-none text-white">
+          FELO VALENCIA
+        </router-link>
+      </v-toolbar-title>
+      <v-spacer />
+      <div class="d-none d-md-flex align-center">
+        <v-btn v-for="item in navItems" :key="item.to" :to="item.to" variant="text" class="mx-1">
+          {{ t(item.title) }}
+        </v-btn>
+        <v-divider vertical class="mx-3" />
+        <v-btn-toggle v-model="locale" mandatory density="compact" color="primary">
+          <v-btn value="es" size="small" @click="changeLanguage('es')">ES</v-btn>
+          <v-btn value="en" size="small" @click="changeLanguage('en')">EN</v-btn>
+        </v-btn-toggle>
+      </div>
+    </v-app-bar>
+
+    <v-navigation-drawer v-model="drawer" temporary>
+      <v-list nav>
+        <v-list-item v-for="item in navItems" :key="item.to" :to="item.to" @click="drawer = false">
+          <v-list-item-title>{{ t(item.title) }}</v-list-item-title>
+        </v-list-item>
+        <v-divider class="my-2" />
+        <v-list-item>
+          <v-btn-toggle v-model="locale" mandatory density="compact" color="primary">
+            <v-btn value="es" size="small" @click="changeLanguage('es')">ES</v-btn>
+            <v-btn value="en" size="small" @click="changeLanguage('en')">EN</v-btn>
+          </v-btn-toggle>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-main>
+      <router-view />
+    </v-main>
+
+    <v-footer class="bg-surface pa-6">
+      <v-container>
+        <v-row>
+          <v-col cols="12" md="4">
+            <h3 class="text-h6 mb-2">FELO VALENCIA</h3>
+            <p class="text-body-2 text-grey">Sound Designer</p>
+          </v-col>
+          <v-col cols="12" md="4">
+            <h4 class="text-subtitle-1 mb-2">{{ t('contact.title') }}</h4>
+            <p class="text-body-2 text-grey">info@felovalencia.com</p>
+          </v-col>
+          <v-col cols="12" md="4">
+            <h4 class="text-subtitle-1 mb-2">{{ t('contact.connect') }}</h4>
+            <div class="d-flex ga-2">
+              <v-btn icon size="small" variant="text" href="https://www.linkedin.com/in/felipe-v-129a0596/" target="_blank">
+                <v-icon>mdi-linkedin</v-icon>
+              </v-btn>
+              <v-btn icon size="small" variant="text" href="https://www.instagram.com/felovalencip" target="_blank">
+                <v-icon>mdi-instagram</v-icon>
+              </v-btn>
+            </div>
+          </v-col>
+        </v-row>
+        <v-divider class="my-4" />
+        <p class="text-center text-body-2 text-grey">
+          © {{ new Date().getFullYear() }} Felo Valencia. {{ t('footer.rights') }}.
+        </p>
+      </v-container>
+    </v-footer>
+  </v-app>
+</template>
+
+<style scoped>
+</style>

@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "portfolio": "Portafolio",
+    "about": "Acerca",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Sound Designer",
+    "subtitle": "Postproducción de Audio para Cine y Televisión",
+    "bio": "Ingeniero de sonido con habilidades en edición y mezcla para postproducción de audio que cuenta con experiencia en la industria del cine, la televisión y medios. Graduado como ingeniero de sonido y docente en la universidad ITM (Medellín) para el programa ingeniería multimedia e ingeniería de sonido.",
+    "viewPortfolio": "Ver Portafolio",
+    "featuredWork": "Trabajos Destacados"
+  },
+  "portfolio": {
+    "title": "Portafolio",
+    "subtitle": "Una selección de proyectos de cine y televisión",
+    "allProjects": "Todos los Proyectos",
+    "films": "Películas",
+    "series": "Series",
+    "documentaries": "Documentales",
+    "awards": "Premios y Reconocimientos",
+    "viewProject": "Ver Proyecto"
+  },
+  "project": {
+    "role": "Rol",
+    "year": "Año",
+    "director": "Director",
+    "awards": "Premios",
+    "close": "Cerrar"
+  },
+  "contact": {
+    "title": "Contacto",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "connect": "Conectar"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados"
+  }
+}

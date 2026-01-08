@@ -1,0 +1,346 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "One Hundred Years of Solitude",
+      "year": 2024,
+      "category": "series",
+      "image": "/images/projects/one-hundred-years-of-solitude.jpg",
+      "imdb": "https://www.imdb.com/title/tt9892936/",
+      "role": {
+        "en": "Dialogue Editor",
+        "es": "Editor de Diálogos"
+      },
+      "description": {
+        "en": "Netflix's most ambitious Latin American production to date. In the timeless town of Macondo, seven generations of the Buendía family navigate love, oblivion and the inescapability of their past and their fate. Based on Gabriel García Márquez's masterpiece.",
+        "es": "La producción latinoamericana más ambiciosa de Netflix hasta la fecha. En el atemporal pueblo de Macondo, siete generaciones de la familia Buendía navegan el amor, el olvido y la inevitabilidad de su pasado y su destino. Basada en la obra maestra de Gabriel García Márquez."
+      },
+      "awards": ["13 wins & 14 nominations"],
+      "director": "Alex García López, Laura Mora"
+    },
+    {
+      "id": 2,
+      "title": "Narcos",
+      "year": 2015,
+      "category": "series",
+      "image": "/images/projects/narcos.jpg",
+      "imdb": "https://www.imdb.com/title/tt2707408/",
+      "role": {
+        "en": "Sound Department",
+        "es": "Departamento de Sonido"
+      },
+      "description": {
+        "en": "The groundbreaking Netflix series chronicling the criminal exploits of Colombian drug lord Pablo Escobar, as well as the many other drug kingpins who plagued the country through the years. A cultural phenomenon that brought Colombian stories to global audiences.",
+        "es": "La innovadora serie de Netflix que narra las hazañas criminales del narcotraficante colombiano Pablo Escobar, así como de los muchos otros capos que azotaron al país a través de los años. Un fenómeno cultural que llevó las historias colombianas a audiencias globales."
+      },
+      "awards": ["Golden Globe Nomination", "Emmy Nominations"],
+      "director": "José Padilha"
+    },
+    {
+      "id": 3,
+      "title": "La Suprema",
+      "year": 2024,
+      "category": "film",
+      "image": "/images/projects/la-suprema.jpg",
+      "imdb": "https://www.imdb.com/title/tt20158934/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "Colombia's official submission to the 97th Academy Awards. In a remote village without electricity, a teenager convinces the whole town to find a way of watching her estranged uncle compete in a world championship boxing match. Inspired by the legacy of boxer Kid Pambelé.",
+        "es": "La candidatura oficial de Colombia a los Premios Oscar 97. En un pueblo remoto sin electricidad, una adolescente convence a todo el pueblo de encontrar una manera de ver a su tío distanciado competir en un campeonato mundial de boxeo. Inspirada en el legado del boxeador Kid Pambelé."
+      },
+      "awards": ["Premio del Público FICCI 2024", "Premio del Público Festival de Huelva", "Colombia's Oscar Submission 2024"],
+      "director": "Felipe Holguín Caro"
+    },
+    {
+      "id": 4,
+      "title": "The Kings of the World",
+      "year": 2022,
+      "category": "film",
+      "image": "/images/projects/kings-of-the-world.jpg",
+      "imdb": "https://www.imdb.com/title/tt15399372/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "Winner of the Golden Shell at San Sebastián Film Festival. Follows five young men from Medellín's streets as they embark on a journey to reclaim a piece of land. A powerful story about the marginalized, excluded humanity who seeks a place in the world.",
+        "es": "Ganadora de la Concha de Oro en el Festival de San Sebastián. Sigue a cinco jóvenes de las calles de Medellín mientras emprenden un viaje para reclamar un pedazo de tierra. Una poderosa historia sobre la humanidad marginada y excluida que busca un lugar en el mundo."
+      },
+      "awards": ["Golden Shell - San Sebastián Film Festival 2022"],
+      "director": "Laura Mora"
+    },
+    {
+      "id": 5,
+      "title": "La Roya",
+      "year": 2021,
+      "category": "film",
+      "image": "/images/projects/la-roya.jpg",
+      "imdb": "https://www.imdb.com/title/tt15399588/",
+      "role": {
+        "en": "Sound Designer & Mixer",
+        "es": "Diseñador de Sonido y Mezcla"
+      },
+      "description": {
+        "en": "Jorge lives in the isolated Colombian mountains, working his father's coffee plantation with pride while everyone else in his generation has fled to the cities. As village festivities approach, he awaits Andrea, the former girlfriend he has never forgotten.",
+        "es": "Jorge vive en las montañas aisladas de Colombia, trabajando con orgullo la finca cafetera de su padre mientras todos los demás de su generación han huido a las ciudades. Mientras se acercan las fiestas del pueblo, espera a Andrea, la ex novia que nunca ha olvidado."
+      },
+      "awards": ["Official Selection - San Sebastián Film Festival 2021", "Best Artistic Contribution - Beijing Film Festival 2022", "Macondo Award Nomination - Best Sound"],
+      "director": "Juan Sebastián Mesa"
+    },
+    {
+      "id": 6,
+      "title": "Wild District",
+      "year": 2018,
+      "category": "series",
+      "image": "/images/projects/wild-district.jpg",
+      "imdb": "https://www.imdb.com/title/tt8105958/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "Netflix original series. Jhon Jeiver, a lethal guerrilla fighter who escapes from the jungle after the signing of the Colombian Peace Agreements, arrives in Bogotá escaping from his past, and tries to start a new life while being hunted by those he left behind.",
+        "es": "Serie original de Netflix. Jhon Jeiver, un letal guerrillero que escapa de la selva tras la firma de los Acuerdos de Paz colombianos, llega a Bogotá huyendo de su pasado e intenta comenzar una nueva vida mientras es perseguido por aquellos que dejó atrás."
+      },
+      "awards": [],
+      "director": "Andrés Baiz"
+    },
+    {
+      "id": 7,
+      "title": "Los Nadie",
+      "year": 2016,
+      "category": "film",
+      "image": "/images/projects/los-nadie.jpg",
+      "imdb": "https://www.imdb.com/title/tt5929594/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "Camilo, Mechas, Manu, Ana and Pipa are five street punks navigating the intense unrest, astonishment, contained tenderness and manifested rage of late adolescence in Medellín. Shot in atmospheric black-and-white, this punk-infused portrait captures the raw energy of Colombia's urban youth.",
+        "es": "Camilo, Mechas, Manu, Ana y Pipa son cinco punks callejeros navegando la intensa inquietud, el asombro, la ternura contenida y la rabia manifestada del final de la adolescencia en Medellín. Filmada en atmosférico blanco y negro, este retrato impregnado de punk captura la energía cruda de la juventud urbana de Colombia."
+      },
+      "awards": ["Audience Award - Venice Critics' Week 2016"],
+      "director": "Juan Sebastián Mesa"
+    },
+    {
+      "id": 8,
+      "title": "La Mujer del Animal",
+      "year": 2016,
+      "category": "film",
+      "image": "/images/projects/la-mujer-del-animal.jpg",
+      "imdb": "https://www.imdb.com/title/tt4335804/",
+      "role": {
+        "en": "Sound Designer & Mixer",
+        "es": "Diseñador de Sonido y Mezcla"
+      },
+      "description": {
+        "en": "Based on true events from 1975-1982. Amparo flees a convent and arrives at her sister's house in a marginal neighborhood of Medellín. Her cousin Libardo, known as 'The Animal', becomes infatuated with her and forces her to live under his roof. A harrowing portrait of survival from acclaimed director Víctor Gaviria.",
+        "es": "Basada en hechos reales de 1975-1982. Amparo huye de un convento y llega a casa de su hermana en un barrio marginal de Medellín. Su primo Libardo, conocido como 'El Animal', se obsesiona con ella y la obliga a vivir bajo su techo. Un retrato desgarrador de supervivencia del aclamado director Víctor Gaviria."
+      },
+      "awards": ["Official Selection - TIFF 2016", "Coral Award - Best Director, Havana Film Festival", "Best Direction - Málaga Film Festival 2017"],
+      "director": "Víctor Gaviria"
+    },
+    {
+      "id": 9,
+      "title": "Cavewoman",
+      "year": 2022,
+      "category": "film",
+      "image": "/images/projects/cavewoman.jpg",
+      "imdb": "https://www.imdb.com/title/tt19867050/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "An adaptation of Euripides' Electra set during WWII. During the Nazi invasion of Greece, a female resistance fighter embarks on a revenge operation to assassinate her own mother, in the name of God. Composed of only 24 shots as homage to cinema's 24 frames per second.",
+        "es": "Una adaptación de la Electra de Eurípides ambientada durante la Segunda Guerra Mundial. Durante la invasión nazi de Grecia, una combatiente de la resistencia emprende una operación de venganza para asesinar a su propia madre, en nombre de Dios. Compuesta por solo 24 tomas en homenaje a los 24 fotogramas por segundo del cine."
+      },
+      "awards": ["JF Costopoulos Foundation Award - Thessaloniki Film Festival"],
+      "director": "Spiros Stathoulopoulos"
+    },
+    {
+      "id": 10,
+      "title": "Nuit Obscure",
+      "year": 2022,
+      "category": "film",
+      "image": "/images/projects/nuit-obscure.jpg",
+      "imdb": "https://www.imdb.com/title/tt22303580/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "Set in Melilla, a Spanish enclave in Morocco that serves as one of the only land borders between Africa and Europe. A buffer zone where European migration policies, their challenges and their consequences are played out in harsh reality. A powerful examination of hope and human resilience.",
+        "es": "Ambientada en Melilla, un enclave español en Marruecos que sirve como una de las únicas fronteras terrestres entre África y Europa. Una zona de amortiguamiento donde las políticas migratorias europeas, sus desafíos y consecuencias se desarrollan en dura realidad. Un poderoso examen de esperanza y resiliencia humana."
+      },
+      "awards": [],
+      "director": "Sylvain George"
+    },
+    {
+      "id": 11,
+      "title": "Suspensión",
+      "year": 2019,
+      "category": "film",
+      "image": "/images/projects/suspension.jpg",
+      "imdb": "https://www.imdb.com/title/tt11772522/",
+      "role": {
+        "en": "Sound Designer & Mixer",
+        "es": "Diseñador de Sonido y Mezcla"
+      },
+      "description": {
+        "en": "Deep in the misty jungle of southern Colombia, between treacherously steep mountain slopes, stands an unfinished concrete bridge - an absurd symbol of human folly. Once intended as part of a bypass, it now serves as a bizarre attraction for day trippers and motorcycle stunt performers.",
+        "es": "En lo profundo de la selva brumosa del sur de Colombia, entre laderas de montaña traicioneramente empinadas, se alza un puente de concreto sin terminar - un símbolo absurdo de la locura humana. Originalmente destinado a ser parte de un desvío, ahora sirve como una atracción bizarra para excursionistas y motociclistas acrobáticos."
+      },
+      "awards": ["Macondo Award Nomination - Best Sound"],
+      "director": "Simón Uribe"
+    },
+    {
+      "id": 12,
+      "title": "The Marked Heart",
+      "year": 2022,
+      "category": "series",
+      "image": "/images/projects/marked-heart.jpg",
+      "imdb": "https://www.imdb.com/title/tt18974572/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "Netflix thriller series. Simón's wife was killed to extract her heart and transplant it to Camila, the wife of a rich man. In search of revenge, he dives into the dangerous world of organ trafficking.",
+        "es": "Serie de suspenso de Netflix. La esposa de Simón fue asesinada para extraer su corazón y trasplantarlo a Camila, la esposa de un hombre rico. En busca de venganza, se sumerge en el peligroso mundo del tráfico de órganos."
+      },
+      "awards": [],
+      "director": "Camilo Vega"
+    },
+    {
+      "id": 13,
+      "title": "Positivo Negativo",
+      "year": 2024,
+      "category": "film",
+      "image": "/images/projects/positivo-negativo.jpg",
+      "imdb": "https://www.imdb.com/title/tt32245807/",
+      "role": {
+        "en": "Sound Editor",
+        "es": "Editor de Sonido"
+      },
+      "description": {
+        "en": "In the depths of the Caribbean, on the banks of the Sinú River, lives Ángel (76). In the village it is rumoured that Ángel has a pact with the devil and that he is a despicable and dangerous old man who inherited secrets of witchcraft from his father. One of his grandsons becomes fascinated by this mysterious power.",
+        "es": "En las profundidades del Caribe, a orillas del río Sinú, vive Ángel (76). En el pueblo se rumorea que Ángel tiene un pacto con el diablo y que es un anciano despreciable y peligroso que heredó secretos de brujería de su padre. Uno de sus nietos se fascina con este poder misterioso."
+      },
+      "awards": [],
+      "director": "David Aguilera Cogollo"
+    },
+    {
+      "id": 14,
+      "title": "Topos",
+      "year": 2021,
+      "category": "film",
+      "image": "/images/projects/topos.jpg",
+      "imdb": "https://www.imdb.com/title/tt13988208/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "A powerful drama full of symbolism that tells a reality experienced in many places across Latin America. Through the experiences of children rejected by society, this raw and memorable film exposes harsh truths with natural actors delivering authentic performances.",
+        "es": "Un drama poderoso lleno de simbolismo que cuenta una realidad vivida en muchos lugares de América Latina. A través de las experiencias de niños rechazados por la sociedad, esta película cruda y memorable expone verdades duras con actores naturales que entregan interpretaciones auténticas."
+      },
+      "awards": [],
+      "director": "Nico Sánchez"
+    },
+    {
+      "id": 15,
+      "title": "Muzzle",
+      "year": 2023,
+      "category": "film",
+      "image": "/images/projects/muzzle.jpg",
+      "imdb": "https://www.imdb.com/title/tt17663876/",
+      "role": {
+        "en": "Sound Department",
+        "es": "Departamento de Sonido"
+      },
+      "description": {
+        "en": "American action thriller starring Aaron Eckhart. After his K-9 partner is killed in the line of duty in Skid Row, LAPD officer Jake Rosser plummets deep into a sinister underworld to uncover the truth about who may be responsible.",
+        "es": "Thriller de acción estadounidense protagonizado por Aaron Eckhart. Después de que su compañero K-9 es asesinado en servicio en Skid Row, el oficial de LAPD Jake Rosser se sumerge en un siniestro submundo para descubrir la verdad sobre quién puede ser responsable."
+      },
+      "awards": [],
+      "director": "John Stalberg Jr."
+    },
+    {
+      "id": 16,
+      "title": "Buy Me a Gun",
+      "year": 2018,
+      "category": "film",
+      "image": "/images/projects/buy-me-a-gun.jpg",
+      "imdb": "https://www.imdb.com/title/tt7425520/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "In a timeless Mexico where women are disappearing, a girl called Huck wears a mask to hide her gender. She helps her dad, a tormented addict, to take care of an abandoned baseball camp where drug dealers play nightly. A haunting tale of survival.",
+        "es": "En un México atemporal donde las mujeres están desapareciendo, una niña llamada Huck usa una máscara para ocultar su género. Ella ayuda a su padre, un adicto atormentado, a cuidar un campo de béisbol abandonado donde los narcotraficantes juegan por las noches. Una historia inquietante de supervivencia."
+      },
+      "awards": [],
+      "director": "Julio Hernández Cordón"
+    },
+    {
+      "id": 17,
+      "title": "The Donut King",
+      "year": 2020,
+      "category": "documentary",
+      "image": "/images/projects/donut-king.jpg",
+      "imdb": "https://www.imdb.com/title/tt10214496/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "This documentary tells Ted Ngoy's remarkable story - a Cambodian refugee who escaped the Khmer Rouge and built a donut empire in California, helping fellow refugees along the way. A story of fate, love, survival, hard knocks, and redemption.",
+        "es": "Este documental cuenta la notable historia de Ted Ngoy - un refugiado camboyano que escapó del Khmer Rojo y construyó un imperio de donas en California, ayudando a otros refugiados en el camino. Una historia de destino, amor, supervivencia, golpes duros y redención."
+      },
+      "awards": [],
+      "director": "Alice Gu"
+    },
+    {
+      "id": 18,
+      "title": "La Semilla del Silencio",
+      "year": 2015,
+      "category": "film",
+      "image": "/images/projects/la-semilla-del-silencio.jpg",
+      "imdb": "https://www.imdb.com/title/tt3338230/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "A human rights attorney's murder while probing a high-ranking soldier's involvement in civilian disappearances prompts her detective partner to pursue the dangerous case, undeterred by threats.",
+        "es": "El asesinato de una abogada de derechos humanos mientras investigaba la participación de un soldado de alto rango en desapariciones de civiles impulsa a su compañero detective a perseguir el peligroso caso, sin dejarse intimidar por las amenazas."
+      },
+      "awards": [],
+      "director": "Klaus Mayr, Carlos Moreno"
+    },
+    {
+      "id": 19,
+      "title": "El Rojo Más Puro",
+      "year": 2023,
+      "category": "documentary",
+      "image": "/images/projects/el-rojo-mas-puro.jpg",
+      "imdb": "https://www.imdb.com/title/tt27418974/",
+      "role": {
+        "en": "Sound Designer",
+        "es": "Diseñador de Sonido"
+      },
+      "description": {
+        "en": "Luis Plaza, a 70-year-old union leader, survived the systematic extermination of his political party, the Unión Patriótica. After the last attack he suffered in 2014, his daughter Yira lives with him and discovers a man who fights alone and needs his family. An intimate documentary about political violence, survival, and family bonds.",
+        "es": "Luis Plaza, un líder sindical de 70 años, sobrevivió al exterminio sistemático de su partido político, la Unión Patriótica. Después del último atentado que sufrió en 2014, su hija Yira vive con él y descubre a un hombre que lucha solo y necesita a su familia. Un documental íntimo sobre violencia política, supervivencia y lazos familiares."
+      },
+      "awards": ["Official Selection FICCI 62"],
+      "director": "Yira Plaza O'Byrne"
+    }
+  ]
+}

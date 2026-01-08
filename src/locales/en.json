@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Sound Designer",
+    "subtitle": "Film & Television Audio Post-Production",
+    "bio": "Sound engineer with skills in editing and mixing for audio post-production, with experience in the film, television and media industry. Graduated as a sound engineer and professor at ITM University (Medellín) for the multimedia engineering and sound engineering programs.",
+    "viewPortfolio": "View Portfolio",
+    "featuredWork": "Featured Work"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "A selection of film and television projects",
+    "allProjects": "All Projects",
+    "films": "Films",
+    "series": "Series",
+    "documentaries": "Documentaries",
+    "awards": "Awards & Recognition",
+    "viewProject": "View Project"
+  },
+  "project": {
+    "role": "Role",
+    "year": "Year",
+    "director": "Director",
+    "awards": "Awards",
+    "close": "Close"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "email": "Email",
+    "phone": "Phone",
+    "connect": "Connect"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}
