@@ -19,6 +19,10 @@ const getLocalizedText = (obj) => {
   if (typeof obj === 'string') return obj
   return obj[locale.value] || obj['es']
 }
+
+const getImageUrl = (path) => {
+  return import.meta.env.BASE_URL + path.replace(/^\//, '')
+}
 </script>
 
 <template>
@@ -86,7 +90,7 @@ const getLocalizedText = (obj) => {
         >
           <v-card class="project-card h-100" variant="flat" color="surface-variant">
             <v-img
-              :src="project.image"
+              :src="getImageUrl(project.image)"
               height="200"
               cover
               class="project-image"

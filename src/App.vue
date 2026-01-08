@@ -24,6 +24,8 @@ const navItems = [
   { title: 'nav.home', to: '/' },
   { title: 'nav.portfolio', to: '/portfolio' }
 ]
+
+const logoUrl = import.meta.env.BASE_URL + 'images/logo.png'
 </script>
 
 <template>
@@ -31,7 +33,7 @@ const navItems = [
     <v-app-bar flat color="transparent" class="px-4">
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" />
       <router-link to="/" class="text-decoration-none">
-        <img src="/images/logo.png" alt="Felo Valencia" class="header-logo" />
+        <img :src="logoUrl" alt="Felo Valencia" class="header-logo" />
       </router-link>
       <v-spacer />
       <div class="d-none d-md-flex align-center">
@@ -79,7 +81,7 @@ const navItems = [
       <v-container>
         <v-row>
           <v-col cols="12" md="4">
-            <img src="/images/logo.png" alt="Felo Valencia" class="footer-logo mb-2" />
+            <img :src="logoUrl" alt="Felo Valencia" class="footer-logo mb-2" />
           </v-col>
           <v-col cols="12" md="4">
             <h4 class="text-subtitle-1 mb-2">{{ t('contact.title') }}</h4>

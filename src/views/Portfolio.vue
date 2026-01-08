@@ -69,6 +69,10 @@ const getLocalizedText = (obj) => {
   return obj[locale.value] || obj['es']
 }
 
+const getImageUrl = (path) => {
+  return import.meta.env.BASE_URL + path.replace(/^\//, '')
+}
+
 const openProject = (project) => {
   selectedProject.value = project
   dialogOpen.value = true
@@ -124,7 +128,7 @@ const openProject = (project) => {
           >
             <div class="project-image-wrapper">
               <v-img
-                :src="project.image"
+                :src="getImageUrl(project.image)"
                 :aspect-ratio="2/3"
                 cover
                 class="project-image"
@@ -198,7 +202,7 @@ const openProject = (project) => {
           <v-col cols="12" md="5" class="dialog-poster-col">
             <div class="dialog-poster-wrapper">
               <v-img
-                :src="selectedProject.image"
+                :src="getImageUrl(selectedProject.image)"
                 :aspect-ratio="2/3"
                 cover
                 class="dialog-poster"
