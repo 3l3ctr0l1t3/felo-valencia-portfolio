@@ -20,11 +20,9 @@ const navItems = [
   <v-app>
     <v-app-bar flat color="transparent" class="px-4">
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" />
-      <v-toolbar-title class="text-h5 font-weight-bold">
-        <router-link to="/" class="text-decoration-none text-white">
-          FELO VALENCIA
-        </router-link>
-      </v-toolbar-title>
+      <router-link to="/" class="text-decoration-none">
+        <img src="/images/logo.png" alt="Felo Valencia" class="header-logo" />
+      </router-link>
       <v-spacer />
       <div class="d-none d-md-flex align-center">
         <v-btn v-for="item in navItems" :key="item.to" :to="item.to" variant="text" class="mx-1">
@@ -61,8 +59,7 @@ const navItems = [
       <v-container>
         <v-row>
           <v-col cols="12" md="4">
-            <h3 class="text-h6 mb-2">FELO VALENCIA</h3>
-            <p class="text-body-2 text-grey">Sound Designer</p>
+            <img src="/images/logo.png" alt="Felo Valencia" class="footer-logo mb-2" />
           </v-col>
           <v-col cols="12" md="4">
             <h4 class="text-subtitle-1 mb-2">{{ t('contact.title') }}</h4>
@@ -90,4 +87,13 @@ const navItems = [
 </template>
 
 <style scoped>
+.header-logo {
+  height: 36px;
+  width: auto;
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+}
 </style>

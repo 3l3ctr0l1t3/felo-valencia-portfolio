@@ -19,8 +19,11 @@
     "films": "Películas",
     "series": "Series",
     "documentaries": "Documentales",
+    "shorts": "Cortos",
     "awards": "Premios y Reconocimientos",
-    "viewProject": "Ver Proyecto"
+    "viewProject": "Ver Proyecto",
+    "of": "de",
+    "projects": "proyectos"
   },
   "project": {
     "role": "Rol",

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import projectsData from '../data/projects.json'
 
@@ -8,19 +8,62 @@ const { t, locale } = useI18n()
 const selectedCategory = ref('all')
 const selectedProject = ref(null)
 const dialogOpen = ref(false)
+const currentPage = ref(1)
+const itemsPerPage = 20
 
 const categories = [
   { value: 'all', label: 'portfolio.allProjects' },
   { value: 'film', label: 'portfolio.films' },
   { value: 'series', label: 'portfolio.series' },
-  { value: 'documentary', label: 'portfolio.documentaries' }
+  { value: 'documentary', label: 'portfolio.documentaries' },
+  { value: 'short', label: 'portfolio.shorts' }
 ]
+
+// Category priority for sorting (lower = higher priority)
+const categoryPriority = {
+  'film': 1,
+  'series': 2,
+  'documentary': 3,
+  'short': 4
+}
+
+const sortedProjects = computed(() => {
+  return [...projectsData.projects].sort((a, b) => {
+    // First sort by year (newest first)
+    if (b.year !== a.year) {
+      return b.year - a.year
+    }
+    // Then by category priority (films first, then series, etc.)
+    const priorityA = categoryPriority[a.category] || 99
+    const priorityB = categoryPriority[b.category] || 99
+    if (priorityA !== priorityB) {
+      return priorityA - priorityB
+    }
+    // Finally alphabetically by title
+    return a.title.localeCompare(b.title)
+  })
+})
 
 const filteredProjects = computed(() => {
   if (selectedCategory.value === 'all') {
-    return projectsData.projects
+    return sortedProjects.value
   }
-  return projectsData.projects.filter(p => p.category === selectedCategory.value)
+  return sortedProjects.value.filter(p => p.category === selectedCategory.value)
+})
+
+const totalPages = computed(() => {
+  return Math.ceil(filteredProjects.value.length / itemsPerPage)
+})
+
+const paginatedProjects = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  const end = start + itemsPerPage
+  return filteredProjects.value.slice(start, end)
+})
+
+// Reset to page 1 when category changes
+watch(selectedCategory, () => {
+  currentPage.value = 1
 })
 
 const getLocalizedText = (obj) => {
@@ -68,7 +111,7 @@ const openProject = (project) => {
     <v-container class="pb-16">
       <v-row>
         <v-col
-          v-for="project in filteredProjects"
+          v-for="project in paginatedProjects"
           :key="project.id"
           cols="12"
           sm="6"
@@ -114,11 +157,28 @@ const openProject = (project) => {
               <div v-if="project.awards && project.awards.length > 0">
                 <v-icon size="small" color="secondary" class="mr-1">mdi-trophy</v-icon>
                 <span class="text-caption text-secondary">
-                  {{ project.awards.length }} {{ project.awards.length === 1 ? 'award' : 'awards' }}
+                  {{ project.awards[0].length > 35 ? project.awards[0].substring(0, 35) + '...' : project.awards[0] }}
                 </span>
               </div>
             </v-card-text>
           </v-card>
+        </v-col>
+      </v-row>
+
+      <!-- Pagination -->
+      <v-row v-if="totalPages > 1" justify="center" class="mt-8">
+        <v-col cols="12" class="d-flex flex-column align-center">
+          <v-pagination
+            v-model="currentPage"
+            :length="totalPages"
+            :total-visible="7"
+            color="primary"
+            rounded="circle"
+          />
+          <p class="text-body-2 text-grey mt-2">
+            {{ (currentPage - 1) * itemsPerPage + 1 }} - {{ Math.min(currentPage * itemsPerPage, filteredProjects.length) }}
+            {{ t('portfolio.of') }} {{ filteredProjects.length }} {{ t('portfolio.projects') }}
+          </p>
         </v-col>
       </v-row>
     </v-container>

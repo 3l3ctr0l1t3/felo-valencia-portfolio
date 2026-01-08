@@ -19,8 +19,11 @@
     "films": "Films",
     "series": "Series",
     "documentaries": "Documentaries",
+    "shorts": "Shorts",
     "awards": "Awards & Recognition",
-    "viewProject": "View Project"
+    "viewProject": "View Project",
+    "of": "of",
+    "projects": "projects"
   },
   "project": {
     "role": "Role",
