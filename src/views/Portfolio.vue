@@ -82,7 +82,7 @@ const openProject = (project) => {
       <v-row justify="center">
         <v-col cols="12" class="text-center">
           <h1 class="text-h3 font-weight-bold mb-4">{{ t('portfolio.title') }}</h1>
-          <p class="text-h6 text-grey-lighten-1">{{ t('portfolio.subtitle') }}</p>
+          <p class="text-h6 text-medium-emphasis">{{ t('portfolio.subtitle') }}</p>
         </v-col>
       </v-row>
 
@@ -146,10 +146,10 @@ const openProject = (project) => {
             </div>
             <v-card-text class="pa-4">
               <div class="d-flex justify-space-between align-center mb-2">
-                <h3 class="text-subtitle-1 font-weight-bold text-white">{{ project.title }}</h3>
-                <span class="text-body-2 text-grey">{{ project.year }}</span>
+                <h3 class="text-subtitle-1 font-weight-bold">{{ project.title }}</h3>
+                <span class="text-body-2 text-medium-emphasis">{{ project.year }}</span>
               </div>
-              <p class="text-body-2 text-grey-lighten-1 mb-2">
+              <p class="text-body-2 text-medium-emphasis mb-2">
                 {{ getLocalizedText(project.role) }}
               </p>
               <div v-if="project.awards && project.awards.length > 0">
@@ -173,7 +173,7 @@ const openProject = (project) => {
             color="primary"
             rounded="circle"
           />
-          <p class="text-body-2 text-grey mt-2">
+          <p class="text-body-2 text-medium-emphasis mt-2">
             {{ (currentPage - 1) * itemsPerPage + 1 }} - {{ Math.min(currentPage * itemsPerPage, filteredProjects.length) }}
             {{ t('portfolio.of') }} {{ filteredProjects.length }} {{ t('portfolio.projects') }}
           </p>
@@ -278,7 +278,7 @@ const openProject = (project) => {
 
 .project-image-wrapper {
   overflow: hidden;
-  background-color: #1a1a1a;
+  background-color: rgb(var(--v-theme-surface-variant));
 }
 
 .project-image {
@@ -324,7 +324,7 @@ const openProject = (project) => {
 }
 
 .dialog-poster-col {
-  background-color: #1a1a1a;
+  background-color: rgb(var(--v-theme-surface-variant));
 }
 
 .dialog-poster-wrapper {

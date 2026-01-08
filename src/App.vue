@@ -1,9 +1,19 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useTheme } from 'vuetify'
 
 const { locale, t } = useI18n()
+const theme = useTheme()
 const drawer = ref(false)
+
+const isDark = computed(() => theme.global.current.value.dark)
+
+const toggleTheme = () => {
+  const newTheme = isDark.value ? 'lightTheme' : 'darkTheme'
+  theme.global.name.value = newTheme
+  localStorage.setItem('theme', newTheme)
+}
 
 const changeLanguage = (lang) => {
   locale.value = lang
@@ -29,6 +39,9 @@ const navItems = [
           {{ t(item.title) }}
         </v-btn>
         <v-divider vertical class="mx-3" />
+        <v-btn icon variant="text" @click="toggleTheme" class="mr-2">
+          <v-icon>{{ isDark ? 'mdi-weather-sunny' : 'mdi-weather-night' }}</v-icon>
+        </v-btn>
         <v-btn-toggle v-model="locale" mandatory density="compact" color="primary">
           <v-btn value="es" size="small" @click="changeLanguage('es')">ES</v-btn>
           <v-btn value="en" size="small" @click="changeLanguage('en')">EN</v-btn>
@@ -40,6 +53,13 @@ const navItems = [
       <v-list nav>
         <v-list-item v-for="item in navItems" :key="item.to" :to="item.to" @click="drawer = false">
           <v-list-item-title>{{ t(item.title) }}</v-list-item-title>
+        </v-list-item>
+        <v-divider class="my-2" />
+        <v-list-item @click="toggleTheme">
+          <template v-slot:prepend>
+            <v-icon>{{ isDark ? 'mdi-weather-sunny' : 'mdi-weather-night' }}</v-icon>
+          </template>
+          <v-list-item-title>{{ isDark ? 'Light Mode' : 'Dark Mode' }}</v-list-item-title>
         </v-list-item>
         <v-divider class="my-2" />
         <v-list-item>
@@ -63,7 +83,7 @@ const navItems = [
           </v-col>
           <v-col cols="12" md="4">
             <h4 class="text-subtitle-1 mb-2">{{ t('contact.title') }}</h4>
-            <p class="text-body-2 text-grey">info@felovalencia.com</p>
+            <p class="text-body-2 text-medium-emphasis">info@felovalencia.com</p>
           </v-col>
           <v-col cols="12" md="4">
             <h4 class="text-subtitle-1 mb-2">{{ t('contact.connect') }}</h4>
@@ -78,7 +98,7 @@ const navItems = [
           </v-col>
         </v-row>
         <v-divider class="my-4" />
-        <p class="text-center text-body-2 text-grey">
+        <p class="text-center text-body-2 text-medium-emphasis">
           © {{ new Date().getFullYear() }} Felo Valencia. {{ t('footer.rights') }}.
         </p>
       </v-container>

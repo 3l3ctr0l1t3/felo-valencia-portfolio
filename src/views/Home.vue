@@ -1,9 +1,12 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
+import { useTheme } from 'vuetify'
 import projectsData from '../data/projects.json'
 
 const { t, locale } = useI18n()
+const theme = useTheme()
+const isDark = computed(() => theme.global.current.value.dark)
 
 // Get featured projects (those with awards)
 const featuredProjects = computed(() => {
@@ -21,7 +24,7 @@ const getLocalizedText = (obj) => {
 <template>
   <div>
     <!-- Hero Section -->
-    <v-container fluid class="hero-section pa-0">
+    <v-container fluid :class="['hero-section', 'pa-0', isDark ? 'hero-dark' : 'hero-light']">
       <div class="hero-overlay">
         <v-container class="py-16">
           <v-row align="center" justify="center" class="min-height-hero">
@@ -32,7 +35,7 @@ const getLocalizedText = (obj) => {
               <h2 class="text-h4 text-md-h3 font-weight-light mb-6">
                 {{ t('home.title') }}
               </h2>
-              <p class="text-h6 text-grey-lighten-1 mb-8" style="max-width: 600px;">
+              <p class="text-h6 text-medium-emphasis mb-8" style="max-width: 600px;">
                 {{ t('home.subtitle') }}
               </p>
               <v-btn
@@ -60,7 +63,7 @@ const getLocalizedText = (obj) => {
       <v-row justify="center">
         <v-col cols="12" md="10" lg="8">
           <v-card class="pa-8 bg-surface-variant" variant="flat">
-            <p class="text-body-1 text-grey-lighten-1" style="line-height: 1.8;">
+            <p class="text-body-1 text-medium-emphasis" style="line-height: 1.8;">
               {{ t('home.bio') }}
             </p>
           </v-card>
@@ -96,7 +99,7 @@ const getLocalizedText = (obj) => {
             </v-img>
             <v-card-text class="pa-4">
               <h3 class="text-h6 mb-2">{{ project.title }}</h3>
-              <p class="text-body-2 text-grey mb-2">{{ project.year }}</p>
+              <p class="text-body-2 text-medium-emphasis mb-2">{{ project.year }}</p>
               <v-chip
                 v-for="(award, index) in project.awards.slice(0, 1)"
                 :key="index"
@@ -123,8 +126,15 @@ const getLocalizedText = (obj) => {
 
 <style scoped>
 .hero-section {
-  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
   min-height: 80vh;
+}
+
+.hero-dark {
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+}
+
+.hero-light {
+  background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 50%, #e8e8e8 100%);
 }
 
 .hero-overlay {

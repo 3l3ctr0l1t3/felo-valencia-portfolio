@@ -20,13 +20,30 @@ const darkTheme = {
   }
 }
 
+const lightTheme = {
+  dark: false,
+  colors: {
+    background: '#f5f5f5',
+    surface: '#ffffff',
+    'surface-variant': '#e8e8e8',
+    primary: '#0097a7',
+    secondary: '#c2185b',
+    accent: '#0097a7',
+    error: '#d32f2f',
+    info: '#1976D2',
+    success: '#388E3C',
+    warning: '#F57C00',
+  }
+}
+
 export default createVuetify({
   components,
   directives,
   theme: {
-    defaultTheme: 'darkTheme',
+    defaultTheme: localStorage.getItem('theme') || 'darkTheme',
     themes: {
-      darkTheme
+      darkTheme,
+      lightTheme
     }
   },
   defaults: {
