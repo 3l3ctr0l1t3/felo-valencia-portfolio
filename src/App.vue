@@ -22,6 +22,7 @@ const changeLanguage = (lang) => {
 
 const navItems = [
   { title: 'nav.home', to: '/' },
+  { title: 'nav.bio', to: '/bio' },
   { title: 'nav.portfolio', to: '/portfolio' }
 ]
 
@@ -30,7 +31,7 @@ const logoUrl = import.meta.env.BASE_URL + 'images/logo.png'
 
 <template>
   <v-app>
-    <v-app-bar flat color="transparent" class="px-4">
+    <v-app-bar flat class="px-4 app-bar-solid">
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" />
       <router-link to="/" class="text-decoration-none">
         <img :src="logoUrl" alt="Felo Valencia" class="header-logo" />
@@ -109,13 +110,18 @@ const logoUrl = import.meta.env.BASE_URL + 'images/logo.png'
 </template>
 
 <style scoped>
+.app-bar-solid {
+  background-color: rgb(var(--v-theme-background)) !important;
+  z-index: 1000;
+}
+
 .header-logo {
-  height: 36px;
+  height: 72px;
   width: auto;
 }
 
 .footer-logo {
-  height: 50px;
+  height: 72px;
   width: auto;
 }
 </style>

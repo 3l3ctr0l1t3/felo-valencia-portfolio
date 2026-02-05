@@ -1,9 +1,13 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import projectsData from '../data/projects.json'
+import { useProjects, useCategories } from '../composables/useSheetData'
 
 const { t, locale } = useI18n()
+
+// Use composables for data
+const { projects, loading: projectsLoading } = useProjects()
+const { categories: sheetCategories, loading: categoriesLoading } = useCategories()
 
 const selectedCategory = ref('all')
 const selectedProject = ref(null)
@@ -11,12 +15,13 @@ const dialogOpen = ref(false)
 const currentPage = ref(1)
 const itemsPerPage = 20
 
-const categories = [
-  { value: 'all', label: 'portfolio.allProjects' },
-  { value: 'film', label: 'portfolio.films' },
-  { value: 'series', label: 'portfolio.series' },
-  { value: 'documentary', label: 'portfolio.documentaries' }
-]
+// Transform categories for use with direct labels from sheet
+const categories = computed(() => {
+  return sheetCategories.value.map(cat => ({
+    value: cat.value,
+    label: cat.label?.[locale.value] || cat.label?.es || cat.value || ''
+  }))
+})
 
 // Category priority for sorting (lower = higher priority)
 const categoryPriority = {
@@ -26,7 +31,7 @@ const categoryPriority = {
 }
 
 const sortedProjects = computed(() => {
-  return [...projectsData.projects].sort((a, b) => {
+  return [...projects.value].sort((a, b) => {
     // First sort by year (newest first)
     if (b.year !== a.year) {
       return b.year - a.year
@@ -70,6 +75,9 @@ const getLocalizedText = (obj) => {
 }
 
 const getImageUrl = (path) => {
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    return path
+  }
   return import.meta.env.BASE_URL + path.replace(/^\//, '')
 }
 
@@ -81,19 +89,12 @@ const openProject = (project) => {
 
 <template>
   <div>
-    <!-- Header Section -->
-    <v-container class="py-12">
+    <!-- Filter Chips -->
+    <v-container class="py-8">
       <v-row justify="center">
         <v-col cols="12" class="text-center">
-          <h1 class="text-h3 font-weight-bold mb-4">{{ t('portfolio.title') }}</h1>
-          <p class="text-h6 text-medium-emphasis">{{ t('portfolio.subtitle') }}</p>
-        </v-col>
-      </v-row>
-
-      <!-- Filter Chips -->
-      <v-row justify="center" class="mt-6">
-        <v-col cols="12" class="text-center">
-          <v-chip-group v-model="selectedCategory" mandatory selected-class="text-primary">
+          <v-skeleton-loader v-if="categoriesLoading" type="chip@4" class="d-flex justify-center" />
+          <v-chip-group v-else v-model="selectedCategory" mandatory selected-class="text-primary">
             <v-chip
               v-for="cat in categories"
               :key="cat.value"
@@ -102,7 +103,7 @@ const openProject = (project) => {
               variant="outlined"
               class="mx-1"
             >
-              {{ t(cat.label) }}
+              {{ cat.label }}
             </v-chip>
           </v-chip-group>
         </v-col>
@@ -111,7 +112,14 @@ const openProject = (project) => {
 
     <!-- Projects Grid -->
     <v-container class="pb-16">
-      <v-row>
+      <!-- Loading State -->
+      <v-row v-if="projectsLoading">
+        <v-col v-for="n in 8" :key="n" cols="12" sm="6" md="4" lg="3">
+          <v-skeleton-loader type="image, article" />
+        </v-col>
+      </v-row>
+
+      <v-row v-else>
         <v-col
           v-for="project in paginatedProjects"
           :key="project.id"

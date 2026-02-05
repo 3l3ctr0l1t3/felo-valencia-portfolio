@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "bio": "Bio",
     "portfolio": "Portfolio",
     "about": "About",
     "contact": "Contact"
@@ -8,9 +9,38 @@
   "home": {
     "title": "Sound Designer",
     "subtitle": "Film & Television Audio Post-Production",
+    "intro": "I'm Felipe Valencia (Felo). As a sound engineer specialized in audiovisual post-production for film, television, and media, my role is to translate the director's vision by applying my technical knowledge and taking it further by combining it with the passion I've developed for cinema. This gives a distinctive touch to the projects I work on, which I carry out with care and satisfaction to deliver what is shown on screen and heard through the speakers — what the product technically requires, guided by my professional perspective.",
+    "knowMore": "Want to know more about me?",
     "bio": "Sound engineer with skills in editing and mixing for audio post-production, with experience in the film, television and media industry. Graduated as a sound engineer and professor at ITM University (Medellín) for the multimedia engineering and sound engineering programs.",
     "viewPortfolio": "View Portfolio",
     "featuredWork": "Featured Work"
+  },
+  "bio": {
+    "title": "Bio",
+    "subtitle": "Take tarake take",
+    "aboutTitle": "About Felo Valencia",
+    "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "paragraph2": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    "paragraph3": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+    "skillsTitle": "Areas of Expertise",
+    "skills": {
+      "soundDesign": {
+        "title": "Sound Design",
+        "desc": "Creating immersive sonic landscapes that bring stories to life on screen."
+      },
+      "mixing": {
+        "title": "Mixing",
+        "desc": "Balancing dialogue, music, and effects for a polished final product."
+      },
+      "foley": {
+        "title": "Foley",
+        "desc": "Crafting realistic sound effects synchronized to on-screen action."
+      },
+      "adr": {
+        "title": "ADR",
+        "desc": "Automated dialogue replacement for clean, professional audio tracks."
+      }
+    }
   },
   "portfolio": {
     "title": "Portfolio",

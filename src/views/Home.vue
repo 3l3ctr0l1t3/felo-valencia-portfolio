@@ -2,15 +2,18 @@
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
 import { useTheme } from 'vuetify'
-import projectsData from '../data/projects.json'
+import { useProjects } from '../composables/useSheetData'
 
 const { t, locale } = useI18n()
 const theme = useTheme()
 const isDark = computed(() => theme.global.current.value.dark)
 
+// Use composable for projects data
+const { projects, loading: projectsLoading } = useProjects()
+
 // Get featured projects (those with awards)
 const featuredProjects = computed(() => {
-  return projectsData.projects
+  return projects.value
     .filter(p => p.awards && p.awards.length > 0)
     .slice(0, 4)
 })
@@ -21,6 +24,9 @@ const getLocalizedText = (obj) => {
 }
 
 const getImageUrl = (path) => {
+  if (path.startsWith('http://') || path.startsWith('https://')) {
+    return path
+  }
   return import.meta.env.BASE_URL + path.replace(/^\//, '')
 }
 </script>
@@ -39,40 +45,27 @@ const getImageUrl = (path) => {
               <h2 class="text-h4 text-md-h3 font-weight-light mb-6">
                 {{ t('home.title') }}
               </h2>
-              <p class="text-h6 text-medium-emphasis mb-8" style="max-width: 600px;">
+              <p class="text-h6 text-medium-emphasis mb-6" style="max-width: 600px;">
                 {{ t('home.subtitle') }}
               </p>
-              <v-btn
-                size="x-large"
-                color="primary"
-                to="/portfolio"
-                class="mr-4"
-              >
-                {{ t('home.viewPortfolio') }}
-                <v-icon end>mdi-arrow-right</v-icon>
-              </v-btn>
+              <p class="text-body-1 text-medium-emphasis" style="max-width: 600px; line-height: 1.8;">
+                {{ t('home.intro') }}
+              </p>
+              <router-link to="/bio" class="text-primary text-body-1 mt-4 d-inline-block">
+                {{ t('home.knowMore') }}
+                <v-icon size="small" class="ml-1">mdi-arrow-right</v-icon>
+              </router-link>
             </v-col>
-            <v-col cols="12" md="6" class="d-none d-md-flex justify-center">
-              <div class="hero-image-container">
-                <v-icon size="200" color="primary" class="hero-icon">mdi-waveform</v-icon>
-              </div>
+            <v-col cols="12" md="6" class="d-flex justify-center">
+              <v-img
+                :src="getImageUrl('images/HD-5.jpg')"
+                class="hero-photo rounded-lg elevation-8"
+                cover
+              />
             </v-col>
           </v-row>
         </v-container>
       </div>
-    </v-container>
-
-    <!-- Bio Section -->
-    <v-container class="py-16">
-      <v-row justify="center">
-        <v-col cols="12" md="10" lg="8">
-          <v-card class="pa-8 bg-surface-variant" variant="flat">
-            <p class="text-body-1 text-medium-emphasis" style="line-height: 1.8;">
-              {{ t('home.bio') }}
-            </p>
-          </v-card>
-        </v-col>
-      </v-row>
     </v-container>
 
     <!-- Featured Work Section -->
@@ -80,7 +73,13 @@ const getImageUrl = (path) => {
       <h2 class="text-h4 font-weight-bold mb-8 text-center">
         {{ t('home.featuredWork') }}
       </h2>
-      <v-row>
+      <!-- Loading State -->
+      <v-row v-if="projectsLoading">
+        <v-col v-for="n in 4" :key="n" cols="12" sm="6" lg="3">
+          <v-skeleton-loader type="image, article" />
+        </v-col>
+      </v-row>
+      <v-row v-else>
         <v-col
           v-for="project in featuredProjects"
           :key="project.id"
@@ -150,18 +149,10 @@ const getImageUrl = (path) => {
   min-height: 60vh;
 }
 
-.hero-image-container {
-  position: relative;
-}
-
-.hero-icon {
-  opacity: 0.3;
-  animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.05); opacity: 0.5; }
+.hero-photo {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 2 / 3;
 }
 
 .project-card {
