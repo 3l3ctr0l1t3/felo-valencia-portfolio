@@ -3,7 +3,7 @@ import fallbackData from '../data/projects.json'
 
 // Configuration
 const SHEET_ID = '1qiuzgl5kc7Qew5nLC3hT-aWzq7p5m8GDMNPs1rd16Ok'
-const CACHE_DURATION = 60 * 60 * 1000 // 1 hour in milliseconds
+const CACHE_DURATION = 2 * 60 * 1000 // 2 minutes in milliseconds
 
 // Cache keys
 const CACHE_KEYS = {
@@ -16,14 +16,33 @@ const CACHE_KEYS = {
  * Parse CSV string into array of objects
  */
 function parseCSV(csv) {
-  const lines = csv.split('\n').filter(line => line.trim())
-  if (lines.length < 2) return []
+  // Split into logical rows, merging lines that are inside quoted fields
+  const rawLines = csv.split('\n')
+  const rows = []
+  let current = ''
+  let inQuotes = false
 
-  const headers = parseCSVLine(lines[0])
+  for (const line of rawLines) {
+    if (!current && !line.trim()) continue
+    current += (current ? '\n' : '') + line
+    // Count unescaped quotes to track if we're inside a quoted field
+    for (let i = 0; i < line.length; i++) {
+      if (line[i] === '"') inQuotes = !inQuotes
+    }
+    if (!inQuotes) {
+      rows.push(current)
+      current = ''
+    }
+  }
+  if (current) rows.push(current)
+
+  if (rows.length < 2) return []
+
+  const headers = parseCSVLine(rows[0])
   const data = []
 
-  for (let i = 1; i < lines.length; i++) {
-    const values = parseCSVLine(lines[i])
+  for (let i = 1; i < rows.length; i++) {
+    const values = parseCSVLine(rows[i])
     const obj = {}
     headers.forEach((header, index) => {
       obj[header.trim()] = values[index]?.trim() || ''
@@ -260,7 +279,10 @@ export function useAuthor() {
     bio: { en: '', es: '' },
     email: { en: 'info@felovalencia.com', es: 'info@felovalencia.com' },
     linkedin: { en: 'https://www.linkedin.com/in/felipe-v-129a0596/', es: 'https://www.linkedin.com/in/felipe-v-129a0596/' },
-    instagram: { en: 'https://www.instagram.com/felovalencip', es: 'https://www.instagram.com/felovalencip' }
+    instagram: { en: 'https://www.instagram.com/felovalencip', es: 'https://www.instagram.com/felovalencip' },
+    about_title: { en: 'About Felo Valencia', es: 'Sobre Felo Valencia' },
+    skills_title: { en: 'Areas of Expertise', es: 'Áreas de Experiencia' },
+    photo: { en: '', es: '' }
   }
 
   async function load() {

@@ -2,10 +2,18 @@
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useTheme } from 'vuetify'
+import { useAuthor } from './composables/useSheetData'
 
 const { locale, t } = useI18n()
 const theme = useTheme()
 const drawer = ref(false)
+const { author } = useAuthor()
+
+const authorLink = (key) => {
+  const val = author.value[key]
+  return val?.[locale.value] || val?.['es'] || ''
+}
+const authorEmail = computed(() => authorLink('email') || 'info@felovalencia.com')
 
 const isDark = computed(() => theme.global.current.value.dark)
 
@@ -86,15 +94,15 @@ const logoUrl = import.meta.env.BASE_URL + 'images/logo.png'
           </v-col>
           <v-col cols="12" md="4">
             <h4 class="text-subtitle-1 mb-2">{{ t('contact.title') }}</h4>
-            <p class="text-body-2 text-medium-emphasis">info@felovalencia.com</p>
+            <p class="text-body-2 text-medium-emphasis">{{ authorEmail }}</p>
           </v-col>
           <v-col cols="12" md="4">
             <h4 class="text-subtitle-1 mb-2">{{ t('contact.connect') }}</h4>
             <div class="d-flex ga-2">
-              <v-btn icon size="small" variant="text" href="https://www.linkedin.com/in/felipe-v-129a0596/" target="_blank">
+              <v-btn v-if="authorLink('linkedin')" icon size="small" variant="text" :href="authorLink('linkedin')" target="_blank">
                 <v-icon>mdi-linkedin</v-icon>
               </v-btn>
-              <v-btn icon size="small" variant="text" href="https://www.instagram.com/felovalencip" target="_blank">
+              <v-btn v-if="authorLink('instagram')" icon size="small" variant="text" :href="authorLink('instagram')" target="_blank">
                 <v-icon>mdi-instagram</v-icon>
               </v-btn>
             </div>
